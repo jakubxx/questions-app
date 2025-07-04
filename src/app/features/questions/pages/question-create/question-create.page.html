@@ -1,0 +1,17 @@
+  @defer {
+<div class="container">
+  <div class="block-style">
+    <h2 class="text-center">Add question</h2>
+    <app-question-form-component (questionCreated)="presenter.createQuestion($event)"></app-question-form-component>
+</div>
+</div>
+  <button
+    mat-fab
+    color="primary"
+    class="fab"
+    aria-label="Dodaj pytanie"
+    routerLink="/list"
+  >
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+}

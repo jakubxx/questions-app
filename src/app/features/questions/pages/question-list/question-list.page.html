@@ -1,0 +1,28 @@
+@defer {
+<div class="container">
+  <div class="block-style">
+    <h2 class="text-center">Questions</h2>
+  @if (presenter.hasQuestions()) {
+      @for (q of presenter.questions(); track q.id) {
+        <app-question-item-component [question]="q"></app-question-item-component>
+      }
+  } @else {
+      <p class="text-center">No questions.</p>
+      <div class="is-flex-center">
+<button mat-raised-button color="primary" routerLink="/create">
+        Add first question
+      </button>
+      </div>
+  }
+</div>
+</div>
+  <button
+    mat-fab
+    color="primary"
+    class="fab"
+    aria-label="Dodaj pytanie"
+    routerLink="/create"
+  >
+    <mat-icon>add</mat-icon>
+  </button>
+}

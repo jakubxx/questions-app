@@ -1,1 +1,48 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --color-border: #e4e4e4;
+  --color-shadow: rgba(0, 0, 0, 0.15);
+  --color-bg: #fff;
+  --color-primary: #4A90E2;
+  --color-text: #333333;
+  --color-active: #ffd9e1;
+  --regular-font-size: 16px;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.main-wrapper, .container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+
+  &.main-wrapper {
+    padding: 20px;
+  }
+}
+.block-style {
+  border: 2px solid var(--color-border);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px var(--color-shadow);
+  padding: 12px;
+  max-width: 800px;
+  background-color: var(--color-bg);
+  margin: 0 auto;
+}
+p, a {
+  font-size: var(--regular-font-size);
+  color: var(--color-text);
+}
+.text-center {
+  text-align: center;
+}
+.is-flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

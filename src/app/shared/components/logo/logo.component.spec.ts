@@ -1,17 +1,17 @@
 import { provideZonelessChangeDetection } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
-import { App } from './app';
+import { LogoComponent } from './logo.component';
 
-describe('App', () => {
+describe('LogoComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [App],
+      imports: [LogoComponent],
       providers: [provideZonelessChangeDetection()],
     }).compileComponents();
   });
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(App);
+  it('should create the LogoComponent', () => {
+    const fixture = TestBed.createComponent(LogoComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });

@@ -1,17 +1,17 @@
 import { provideZonelessChangeDetection } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
-import { App } from './app';
+import { HeaderComponent } from './header.component';
 
-describe('App', () => {
+describe('HeaderComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [App],
+      imports: [HeaderComponent],
       providers: [provideZonelessChangeDetection()],
     }).compileComponents();
   });
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(App);
+  it('should create the HeaderComponent', () => {
+    const fixture = TestBed.createComponent(HeaderComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
