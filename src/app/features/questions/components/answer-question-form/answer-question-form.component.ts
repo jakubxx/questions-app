@@ -48,7 +48,7 @@ export class AnswerQuestionFormComponent {
 
   constructor() {
     this.form = this.fb.group({
-      textAnswer: [''],
+      textAnswer: ['', Validators.minLength(3)],
       yesNoAnswer: [null, Validators.required],
     });
 
@@ -57,7 +57,7 @@ export class AnswerQuestionFormComponent {
       if (type === QuestionType.Text) {
         this.form
           .get('textAnswer')!
-          .setValidators([Validators.required, Validators.minLength(1)]);
+          .setValidators([Validators.required, Validators.minLength(3)]);
         this.form.get('yesNoAnswer')!.clearValidators();
         this.form.get('yesNoAnswer')!.setValue(null, { emitEvent: false });
       } else {

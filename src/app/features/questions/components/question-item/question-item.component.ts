@@ -31,7 +31,6 @@ export class QuestionItemComponent {
 
   saveAnswer(answer: string | boolean) {
     this.presenter.saveAnswer(this.question(), answer);
-    this.expanded = false;
   }
 
   deleteQuestion() {
@@ -40,5 +39,5 @@ export class QuestionItemComponent {
 
   noPropagation(event: Event) {
     event.stopPropagation();
-  } 
+  }
 }

@@ -36,9 +36,8 @@
       >
         @if (question()?.answer !== undefined) {
           <p>
-            <strong>Answer:</strong>
-            @if (question()?.type === 'YES-NO') {
-              {{ question()?.answer ? 'Yes' : 'No' }}
+            @if (question()?.type === "YES-NO") {
+              {{ question()?.answer ? "Yes" : "No" }}
             } @else {
               {{ question()?.answer }}
             }
