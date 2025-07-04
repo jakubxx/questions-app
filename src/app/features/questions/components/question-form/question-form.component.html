@@ -1,19 +1,19 @@
 @defer {
   <form [formGroup]="form" (ngSubmit)="submit()">
-    <mat-form-field appearance="fill" style="width: 100%;">
-      <mat-label>Tytuł pytania</mat-label>
+    <mat-form-field appearance="fill" style="width: 100%">
+      <mat-label>Question title</mat-label>
       <input matInput id="title" type="text" formControlName="title" />
       @if (title.invalid && title.touched) {
-        @if (title.errors?.['required']) {
-            <mat-error>Title is required</mat-error>
+        @if (title.errors?.["required"]) {
+          <mat-error>Title is required</mat-error>
         }
-        @if (title.errors?.['minlength']) {
-            <mat-error>Minimal length is 3 chars</mat-error>
+        @if (title.errors?.["minlength"]) {
+          <mat-error>Minimal length is 3 chars</mat-error>
         }
       }
     </mat-form-field>
 
-    <mat-form-field appearance="fill" style="width: 100%;">
+    <mat-form-field appearance="fill" style="width: 100%">
       <mat-label>Type of question</mat-label>
       <mat-select id="type" formControlName="type">
         @for (qType of questionTypes; track qType.value) {
@@ -26,9 +26,14 @@
     </mat-form-field>
 
     <div class="is-flex-center">
-        <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">
-      Add question
-        </button>
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="form.invalid"
+      >
+        Add question
+      </button>
     </div>
   </form>
 }

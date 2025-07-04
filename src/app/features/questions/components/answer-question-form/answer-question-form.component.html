@@ -1,0 +1,37 @@
+@defer {
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    @if (questionType() === "TEXT") {
+      <mat-form-field appearance="fill" style="width: 100%">
+        <mat-label>Text answer</mat-label>
+        <input matInput formControlName="textAnswer" />
+        @if (textAnswer.invalid && textAnswer.touched) {
+          @if (textAnswer.errors?.["required"]) {
+            <mat-error>Answer is required</mat-error>
+          }
+          @if (textAnswer.errors?.["minlength"]) {
+            <mat-error>Minimal length is 3 chars</mat-error>
+          }
+        }
+      </mat-form-field>
+    } @else {
+      <mat-radio-group formControlName="yesNoAnswer" aria-label="Choose answer">
+        <mat-radio-button [value]="true">Yes</mat-radio-button>
+        <mat-radio-button [value]="false">Not</mat-radio-button>
+      </mat-radio-group>
+      @if (yesNoAnswer.invalid && yesNoAnswer.touched) {
+        <mat-error>Choose answer YES or NOT</mat-error>
+      }
+    }
+
+    <div class="is-flex-center" style="margin-top: 1rem">
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="form.invalid"
+      >
+        Save
+      </button>
+    </div>
+  </form>
+}

@@ -11,11 +11,11 @@ import { RouterLink } from '@angular/router';
   templateUrl: './question-list.page.html',
   styleUrl: './question-list.page.scss',
   imports: [
-    CommonModule, 
-    QuestionItemComponent, 
+    CommonModule,
+    QuestionItemComponent,
     MatIconModule,
     MatButtonModule,
-    RouterLink
+    RouterLink,
   ],
   standalone: true,
 })

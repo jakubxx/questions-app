@@ -10,7 +10,7 @@ import { ToastService } from '../../../core/services/toast.service';
 export class QuestionFacade {
   private questionService = inject(QuestionService);
   private questions = signal<Question[]>(this.questionService.load());
- private toastService = inject(ToastService);
+  private toastService = inject(ToastService);
 
   questions$ = this.questions.asReadonly();
 

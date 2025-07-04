@@ -1,6 +1,9 @@
 {
   "name": "questions-app",
-  "version": "0.0.0",
+  "author": {
+    "name": "Jakub Korsan"
+  },
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

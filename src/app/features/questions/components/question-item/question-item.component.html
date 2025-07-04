@@ -1,10 +1,56 @@
 @defer {
-  <mat-card>
-    <div class="left-side">
-      {{ question()?.title }}
+  <mat-card
+    class="clickable-card"
+    (click)="toggleExpand()"
+    (keydown.enter)="toggleExpand()"
+    tabindex="0"
+    role="button"
+    aria-label="Toggle answer"
+  >
+    <div class="question-card">
+      <div class="left-side">
+        {{ question()?.title }}
+      </div>
+      <div
+        class="right-side"
+        (click)="noPropagation($event)"
+        (keydown.enter)="noPropagation($event)"
+        tabindex="0"
+        role="button"
+        aria-label="Delete question"
+      >
+        <button mat-raised-button color="warn" (click)="deleteQuestion()">
+          Delete
+        </button>
+      </div>
     </div>
-    <div class="right-side">
-      
-    </div>
+
+    @if (expanded) {
+      <div
+        class="answer-box"
+        (click)="noPropagation($event)"
+        (keydown.enter)="noPropagation($event)"
+        tabindex="0"
+        role="group"
+        aria-label="Answer content"
+      >
+        @if (question()?.answer !== undefined) {
+          <p>
+            <strong>Answer:</strong>
+            @if (question()?.type === 'YES-NO') {
+              {{ question()?.answer ? 'Yes' : 'No' }}
+            } @else {
+              {{ question()?.answer }}
+            }
+          </p>
+        } @else {
+          <app-answer-question-form
+            (saveAnswer)="saveAnswer($event)"
+            [questionType]="question()!.type"
+            [initialAnswer]="question()!.answer"
+          ></app-answer-question-form>
+        }
+      </div>
+    }
   </mat-card>
 }

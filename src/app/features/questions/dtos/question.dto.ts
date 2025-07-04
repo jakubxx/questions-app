@@ -3,6 +3,8 @@ export enum QuestionTypeDto {
   YesNo = 'YES-NO',
 }
 
+export type QuestionAnswerType = string | boolean | undefined;
+
 export interface QuestionDto {
   id: string;
   title: string;

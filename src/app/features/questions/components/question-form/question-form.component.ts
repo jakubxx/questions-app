@@ -1,5 +1,10 @@
 import { Component, EventEmitter, inject, Output } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { CreateQuestionPayload } from '../../dtos/create-question.payload';
 import { QuestionTypeDto } from '../../dtos/question.dto';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -15,7 +20,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    MatButtonModule
+    MatButtonModule,
   ],
   templateUrl: './question-form.component.html',
   styleUrls: ['./question-form.component.scss'],

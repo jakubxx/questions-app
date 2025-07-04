@@ -2,9 +2,11 @@
   --color-border: #e4e4e4;
   --color-shadow: rgba(0, 0, 0, 0.15);
   --color-bg: #fff;
-  --color-primary: #4A90E2;
+  --color-primary: #4a90e2;
   --color-text: #333333;
   --color-active: #ffd9e1;
+
+  --font-family: Roboto, "Helvetica Neue", sans-serif;
   --regular-font-size: 16px;
 }
 html,
@@ -13,16 +15,17 @@ body {
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: var(--font-family);
 }
-.main-wrapper, .container {
+.main-wrapper,
+.container {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
   position: relative;
 
   &.main-wrapper {
-    padding: 20px;
+    padding: 20px 0;
   }
 }
 .block-style {
@@ -34,7 +37,8 @@ body {
   background-color: var(--color-bg);
   margin: 0 auto;
 }
-p, a {
+p,
+a {
   font-size: var(--regular-font-size);
   color: var(--color-text);
 }
